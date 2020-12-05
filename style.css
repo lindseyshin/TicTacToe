@@ -7,162 +7,43 @@
 
 h1{
     font-size: 3rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
     margin: 0;
 }
 
-body{
-    margin: 0;
+h3{
+    font-family: fantasy;
 }
 
-.board{
-    width: 100vw;
-    height: 100vh;
+body {
+    font-family: "Arial", sans-serif;
+    background-color: rgb(184, 159, 181);
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%232d2d2d' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+section {
+    text-align: center;
+}
+
+.game--container {
     display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
     grid-template-columns: repeat(3, auto);
-}
-
-.cell{
-    width: 100px;
-    height: 100px;
-    background-color: thistle;
-    border: 1px black solid;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    position: relative;
-    cursor: pointer;
-}
-
-
-
-/* specific layout of board */
-
-.cell:first-child,
-.cell:nth-child(2),
-.cell:nth-child(3){
-    border-top: none;
-}
-
-.cell:nth-child(3n+1){
-    border-left: none;
-}
-
-.cell:nth-child(3n+3){
-    border-right: none;
-}
-
-.cell:last-child,
-.cell:nth-child(8),
-.cell:nth-child(7){
-    border-bottom: none;
-}
-
-
-
-/* x player */
-
-.cell.x, .circle{
-    cursor: not-allowed;
-}
-
-.cell.x::before,
-.cell.x::after,
-.cell.circle::before,{
-    background-color: black;
-}
-
-.board.x.cell:not(.x):not(.circle):hover::before
-.board.x.cell:not(.x):not(.circle):hover::after
-.board.circle.board.x.cell:not(.x):not(.circle):hover::before{
-    background-color: lightgrey;
-}
-.cell .x ::before,
-.cell .x::after
-.board.x.cell:not(.x):not(.circle):hover::before,
-.board.x.cell:hover::after{
-    content: '';
-    position: absolute;
-    width: 65px;
-    height: 65px;
-    background-color: black;
-}
-
-.cell.x::before
-.board.x.cell:not(.x):not(.circle):hover::before{
-    transform: rotate(45deg);
-}
-
-.cell.x::after
-.board.x.cell:not(.x):not(.circle):hover::after{
-    transform: rotate(-45deg);
-}
-
-
-
-/* circle player */
-
-.cell .circle ::before,
-.cell .circle::after
-.board.x.cell:not(.x):not(.circle):hover::before
-.board.x.cell:not(.x):not(.circle):hover::after{
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-}
-
-.cell.circle::before,
-.board.x.cell:not(.x):not(.circle):hover::before{
-    width: 65px;
-    height: 65px;
+    width: 306px;
+    margin: 50px auto;
     
 }
 
-.cell.circle::after,
-.board.x.cell:not(.x):not(.circle):hover::after{
-    width: 65px;
-    height: 65px;
-    background-color: white;
-}
-
-/* Win button */
-
-.win-message{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0, .9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 5rem;
-    flex-direction: column;
-
-}
-
-.win-message button{
-    font-size: 3rem;
-    background-color: white;
-    border: 1px solid black;
-    padding: .25em .5em;
+.cell {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 1px #333333;
     cursor: pointer;
+    line-height: 100px;
+    font-size: 90px;
+    color: rgb(41, 0, 0);
+    align-content: center;
+    border: black solid 3px;
 }
 
-.win-message button:hover{
-    background-color: palevioletred;
-    color: white;
-    border-color: white;
-} */
 
-/* .win-message .show{
-    display: flex;
-}
